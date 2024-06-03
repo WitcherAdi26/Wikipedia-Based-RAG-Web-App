@@ -74,8 +74,12 @@ class QuestionRequest(BaseModel):
     question: str
 
 
+@app.get("/")
+async def root():
+    return {"response":"Welcome to Wikipedia-Based_RAG-Web-App"}
+
 @app.post("/ask")
-def ask_question(request: QuestionRequest):
+async def ask_question(request: QuestionRequest):
     question = request.question
     if not question:
         raise HTTPException(status_code=400, detail="Please provide a question.")
