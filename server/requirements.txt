@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+langchain
+langchain_core
+langchain_community
+numpy
+pydantic
+langchain_groq
+dotenv
+bs4
+reportlab
+tqdm
+sentence-transformers
+chromadb

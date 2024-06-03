@@ -1,0 +1,31 @@
+/* styles.css */
+
+/* Styles for the text box */
+.answer-box {
+    width: 80%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    color: #333;
+    white-space: pre-wrap;
+    overflow: hidden;
+    min-height: 150px;
+  }
+  
+  /* Optional: Add a blinking cursor effect */
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .cursor {
+    display: inline-block;
+    width: 10px;
+    background-color: #333;
+    animation: blink 1s infinite;
+  }
+  
