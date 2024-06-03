@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from langchain_groq import ChatGroq
@@ -87,9 +88,9 @@ async def ask_question(request: QuestionRequest):
     response = query_responder(question)
     return {"response": response}
 
-# PORT = int(os.getenv('PORT', 8000))
+PORT = int(os.getenv('PORT', 8000))
 
-# if __name__ == "__main__":
-#     import uvicorn
-#     uvicorn.run(app, host="0.0.0.0", port=PORT)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
