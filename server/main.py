@@ -12,8 +12,8 @@ from langchain_community.vectorstores import Chroma
 from fastapi.middleware.cors import CORSMiddleware
 import warnings
 
-
-
+load_dotenv()
+PORT = int(os.getenv('PORT', 8000))
 
 app = FastAPI()
 
@@ -28,8 +28,6 @@ app.add_middleware(
     allow_methods=["*"], 
     allow_headers=["*"],
 )
-
-load_dotenv()
 
 groq_api_key = os.getenv('GROQ_API_KEY')
 
@@ -88,9 +86,6 @@ async def ask_question(request: QuestionRequest):
     response = query_responder(question)
     return {"response": response}
 
-PORT = int(os.getenv('PORT', 8000))
-
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    uvicorn.run(app, host="0.0.0.0", port=PORT)
 
