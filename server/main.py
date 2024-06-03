@@ -13,7 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import warnings
 
 load_dotenv()
-PORT = int(os.getenv('PORT', 8000))
+# PORT = int(os.getenv('PORT', 8000))
 
 app = FastAPI()
 
@@ -86,6 +86,6 @@ async def ask_question(request: QuestionRequest):
     response = query_responder(question)
     return {"response": response}
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=PORT)
+# if __name__ == "__main__":
+#     uvicorn.run(app, host="0.0.0.0", port=PORT)
 
