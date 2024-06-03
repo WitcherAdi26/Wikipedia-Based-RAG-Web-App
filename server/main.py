@@ -7,7 +7,7 @@ from langchain_core.prompts import PromptTemplate
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.callbacks import StdOutCallbackHandler
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
