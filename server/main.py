@@ -9,6 +9,10 @@ from langchain.chains import RetrievalQA
 from langchain.callbacks import StdOutCallbackHandler
 from langchain_community.vectorstores import Chroma
 from fastapi.middleware.cors import CORSMiddleware
+import warnings
+
+warnings.filterwarnings("ignore", category=FutureWarning, module="huggingface_hub.file_download")
+
 
 app = FastAPI()
 
